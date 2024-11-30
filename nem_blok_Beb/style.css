@@ -1,0 +1,287 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Montserrat",sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.center{
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+}
+.multi-bg-example {
+    background-color:  rgb(225, 255, 143);
+    height: 900px;
+    background-repeat: no-repeat;
+    background-image: url(img/Group1.svg);
+    background-position: calc(100% + 489px) calc(0% - 334px);
+    block-size: 750px;
+}
+.text1{
+    color: rgb(32, 32, 39);
+    font-family: Montserrat;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 78px;
+    padding-top: 196px;
+  }
+  .block{
+    color: rgb(32, 32, 39);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    margin-top: 24px;
+  }
+ .button2{
+    background: rgb(0, 0, 0);
+    text-align: center;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    border-radius: 60px;
+    margin-top: 18px;
+    height: 55px;
+    width: 247px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    margin-left: 5px;
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 24px;
+  margin-right: 246px;
+  margin-top: 48px;
+    } 
+    .button2:hover{
+        background: rgb(255, 253, 253);
+        text-align: center;
+        box-sizing: border-box;
+        border-radius: 60px;
+        margin-top: 18px;
+        height: 55px;
+        width: 247px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        margin-left: 5px;
+        color: rgb(2, 2, 2);
+        font-family: Montserrat;
+        font-size: 24px;
+      margin-right: 246px;
+      margin-top: 48px;
+        }
+        .igra2{
+            position: absolute;
+            display: flex;
+            margin-top: 94px;
+            right: 1600px;
+          }
+        .igra1{
+            position: absolute;
+            margin-top: 69px;
+              }
+              .igra3{
+                position: absolute;
+                margin-left: 450px;
+                margin-top: 100px;
+                width: 83px;
+            }
+            .igra4{
+                position: absolute;
+                margin-left: 400px;
+                margin-top: 60px;
+                width: 37px;
+            }
+            .for-box{
+                height: 1550px;
+                background-color: rgb(32, 32, 39);
+                position: relative;
+             
+              }
+              .box-igra1{
+                color: rgb(255, 255, 255);
+                font-family: Montserrat;
+                font-size: 64px;
+                font-weight: 700;
+                line-height: 78px;
+                text-align: left;
+
+                padding-top: 94px;
+              }
+            .box-igra2{
+                color: rgb(255, 255, 255);
+                font-family: Montserrat;
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 32px;
+                text-align: left;
+                margin-top: 24px;
+               
+            }
+      .cart1 {
+        height: 473px;
+      }
+      .cart2 .cart5 {
+        height: 512px;
+      }
+      .cart4 .cart6 {
+        height: 551px;
+      }
+      .cart1{
+        background-color: #fff;
+        width: 378px;
+        border-radius: 30px;
+      }
+        
+       .cart2{
+        background-color: #fff;
+        width: 378px;
+        border-radius: 30px;
+      
+       }
+       .cart3{
+        background-color: #fff;
+        width: 378px;
+        border-radius: 30px;
+        transform: scale(1.0);
+        transition: ls;
+      
+        
+       }
+       .cart4{
+        background-color: #fff;
+        width: 378px;
+        margin-top: 36px;
+        border-radius: 30px;
+       
+      
+       }
+       .cart5{
+        background-color: #fff;
+        width: 378px;
+        margin-top: 40px;
+        border-radius: 30px;
+
+     
+      
+       }
+       .cart6{
+        background-color: #fff;
+        width: 378px;
+        margin-top: 36px;
+        border-radius: 30px;
+       }
+       .cart1:hover{
+        background-color: #fff;
+        width: 378px;
+        border-radius: 30px;
+        transform: scale(1.1);
+        transition: ls;
+       }
+       .cart2:hover{
+        background-color: #fff;
+        width: 378px;
+        border-radius: 30px;
+        transform: scale(1.1);
+        transition: ls;
+       }
+       .cart3:hover{
+        background-color: #fff;
+        width: 378px;
+        border-radius: 30px;
+        transform: scale(1.1);
+        transition: ls;
+       }
+       .cart4:hover{
+        background-color: #fff;
+        width: 378px;
+        border-radius: 30px;
+        transform: scale(1.1);
+        transition: ls;
+       }
+       .cart5:hover{
+        background-color: #fff;
+        width: 378px;
+        border-radius: 30px;
+        transform: scale(1.1);
+        transition: ls;
+       }
+       .cart6:hover{
+        background-color: #fff;
+        width: 378px;
+        border-radius: 30px;
+        transform: scale(1.1);
+        transition: ls;
+       }
+       .cart-img1{
+       width: 378px;
+       }
+       .cart-img2{
+        width: 378px;
+        }
+        .cart-img3{
+            width: 378px;
+            }
+            .cart-img4{
+            width: 378px;
+             }
+           .cart-img5{
+            width: 378px;
+            }
+           .cart-img6{
+             width: 378px;
+             }
+       .text2{
+        border-radius: 52.58px;
+        background: rgb(247, 247, 247);
+        color: rgb(32, 32, 39);
+font-family: Montserrat;
+font-size: 16px;
+font-weight: 500;
+line-height: 35px;
+width: 108px;
+height: 36px;
+margin-left: 16px;
+margin-top: 8px;
+text-align: center;
+       }  
+      .text3{
+        color: rgb(32, 32, 39);
+font-family: Montserrat;
+font-size: 32px;
+font-weight: 700;
+line-height: 39px;
+letter-spacing: 0px;
+text-align: left;
+margin-left: 16px;
+margin-top: 16px;
+margin-bottom: 20px;
+      } 
+      .cart-box{
+        margin-top: 40px;
+        display: flex;
+  gap: 32px;
+  columns: 3;
+      }
+      .star12{
+        position: absolute;
+        transform: scale(1.0);
+        transition: ls;
+        right: 118px;
+        top: 88px;
+      }
+      .star11{
+        position: absolute;
+        width: 32px;
+        right: 1650px;
+        top: 750px;
+      }
+      .star10{
+        top: 800px;
+        position: absolute;
+        width: 55px;
+        right: 1600px;
+    }

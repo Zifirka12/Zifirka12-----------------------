@@ -1,0 +1,120 @@
+@media (max-width: 1024px) and (min-width: 768px){
+    .center {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .logo-1 {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        gap: 32px;
+        &-mob {
+            display:none;
+            }
+        }
+    
+    .top-content {
+        display: block;
+    }
+
+    .filtering-form {
+        position: absolute;
+        top: 530px;
+        left: 256px;
+        z-index: 1;
+        padding: 40px 48px;
+        background: #FFF;
+        box-shadow: 0px 4px 67px -12px rgba(0, 0, 0, 0.32);
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        box-sizing: border-box;
+        width: 540px;
+    }
+    
+    .title-1 {
+        font-weight: 600;
+        font-size: 64px;
+        line-height: 70px;
+        padding-top: 64px;
+        padding-bottom: 16px;
+        color: #FFF;
+        font-style: normal;
+        width: 792px;
+    }
+    
+    
+    .top-text {
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+    }
+
+    .link{
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: center;
+        text-decoration-line: underline;
+    }
+
+    .title-2 {
+        color: rgb(0, 0, 0);
+        font-family: Montserrat;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 59px;
+    }
+
+    .for {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 30px;
+        &__item {
+            grid-column: span 2;
+            height: 265px;
+            font-size: 28px;
+            line-height: 34px;
+            &__big{
+                grid-column: span 3;
+                height: 268px;
+            }
+        }
+    }
+
+    .foter-form {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .form__text {
+        color: rgb(0, 0, 0);
+        font-family: Montserrat;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .form__input{
+        width: 260px;
+        height: 40px;
+    }
+
+    .footer-info{
+        gap: 100px;
+    }
+
+    .product-content {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+}
+
