@@ -145,7 +145,6 @@ a {
   background-image: url(img/transparentStar.png), url(img/Star5.png), url(img/Star6.png);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 1020px 10px, 30px 670px, 45px 720px;
-  border-bottom: 1px solid #bcec30;
 }
 
 .main__games-content {
