@@ -31,12 +31,9 @@
             <h1 class="ArcadeBlast">ArcadeBlast</h1>
             <nav class="menu">
                 <div>
-                    <button class="form__button-2">Вход</button>
-                    <div class="modal">
-                        <div class="modal-window">
-                            <p>Ты крутой</p>
-                        </div>
-                    </div>
+                    <button onclick="toggleLoginBlock()" class="form__button-2">Вход</button>
+                    <div id="loginBlock" style="display: none;"></div>
+
                 </div>
                 <div>
                     <button class="form__button-2">Регистрация</button>
@@ -71,7 +68,6 @@
                     <h4 class="title-4 ArcadeBlast1">Поддержать разработчика</h4>
                     <button class="form__button-1" onclick="toggleTextAndImage()">Нажми чтоб оплатить</button>
                     <div id="contentContainer"></div>
-
 <script>
     let isVisible = false;
 
@@ -104,6 +100,47 @@
 
     </div>
     <script src="index.js"></script>
+
+    <script>
+        let isLoginBlockVisible = false;
+    
+        function toggleLoginBlock() {
+            const loginBlock = document.getElementById('loginBlock');
+            if (!isLoginBlockVisible) {
+                loginBlock.innerHTML = `
+                    <p style="text-align: center;">Пожалуйста, войдите</p>
+                    <label for="username">Имя пользователя:</label><br>
+                    <input type="text" id="username" name="username"><br>
+                    <label for="password">Пароль:</label><br>
+                    <input type="password" id="password" name="password"><br>
+                    <button onclick="submitLogin()">Войти</button>
+                    <button onclick="closeLoginBlock()">Закрыть</button>
+                `;
+                loginBlock.style.display = "block";
+                isLoginBlockVisible = true;
+            } else {
+                closeLoginBlock();
+            }
+        }
+    
+        function closeLoginBlock() {
+            const loginBlock = document.getElementById('loginBlock');
+            loginBlock.style.display = "none";
+            loginBlock.innerHTML = "";
+            isLoginBlockVisible = false;
+        }
+    
+        function submitLogin() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+    
+            console.log(`Username: ${username}, Password: ${password}`);
+    
+            alert("Вы вошли в систему!");
+    
+            closeLoginBlock(); // Закрытие формы после успешного входа
+        }
+    </script>
 
 
 </body>
