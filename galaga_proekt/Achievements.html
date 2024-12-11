@@ -21,6 +21,20 @@
             z-index: 1000;
         }
     </style>
+        <style>
+            #contentContainer {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+                z-index: 9999;
+            }
+        </style>
 </head>
 
 <body>
@@ -71,7 +85,6 @@
                     <h4 class="title-4 ArcadeBlast1">Поддержать разработчика</h4>
                     <button class="form__button-1" onclick="toggleTextAndImage()">Нажми чтоб оплатить</button>
                     <div id="contentContainer"></div>
-
 <script>
     let isVisible = false;
 
