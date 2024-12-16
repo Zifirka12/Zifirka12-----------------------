@@ -30,12 +30,18 @@
             <h1 class="ArcadeBlast">ArcadeBlast</h1>
             <nav class="menu">
                 <div>
-                    <button class="form__button-2">Вход</button>
+                    <button onclick="toggleLoginBlock()" class="form__button-2">Вход</button>
+                    <div id="loginBlock" style="display: none; position: fixed; top: 43%; left: 42%;width: 200px;height: 160px;background: rgba(222, 215, 215, 1); box-shadow: 3px 3px 0 rgba(235, 238, 234, 0.8);border-radius: 16px;"></div>
+
                 </div>
                 <div>
-                    <button class="form__button-2">Регистрация</button>
-                </div>
+                    <button onclick="toggleRegisterBlock()" class="form__button-2">Регистрация</button>
+                    <div id="registerBlock" style="display: none; position: fixed; top: 43%; left: 42%;width: 200px;height: 200px;background: rgba(222, 215, 215, 1); box-shadow: 3px 3px 0 rgba(235, 238, 234, 0.8);border-radius: 16px;"></div>                </div>
+
+                
+                
             </nav>
+
             
         </header>
     
@@ -1073,6 +1079,7 @@ window.addEventListener ('keypress', function (e) {
     </div>
 
 </footer>
+<script src="index.js"></script>
 
 </body>
 </html>
