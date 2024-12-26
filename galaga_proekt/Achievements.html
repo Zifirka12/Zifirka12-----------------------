@@ -21,6 +21,20 @@
             z-index: 1000;
         }
     </style>
+        <style>
+            #contentContainer {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+                z-index: 9999;
+            }
+        </style>
 </head>
 
 <body>
@@ -29,12 +43,18 @@
             <h1 class="ArcadeBlast">ArcadeBlast</h1>
             <nav class="menu">
                 <div>
-                    <button class="form__button-2">Вход</button>
+                    <button onclick="toggleLoginBlock()" class="form__button-2">Вход</button>
+                    <div id="loginBlock" style="display: none; position: fixed; top: 43%; left: 42%;width: 200px;height: 160px;background: rgba(222, 215, 215, 1); box-shadow: 3px 3px 0 rgba(235, 238, 234, 0.8);border-radius: 16px;"></div>
+
                 </div>
                 <div>
-                    <button class="form__button-2">Регистрация</button>
-                </div>
+                    <button onclick="toggleRegisterBlock()" class="form__button-2">Регистрация</button>
+                    <div id="registerBlock" style="display: none; position: fixed; top: 43%; left: 42%;width: 200px;height: 200px;background: rgba(222, 215, 215, 1); box-shadow: 3px 3px 0 rgba(235, 238, 234, 0.8);border-radius: 16px;"></div>                </div>
+
+                
+                
             </nav>
+
             
         </header>
 
@@ -71,7 +91,6 @@
                     <h4 class="title-4 ArcadeBlast1">Поддержать разработчика</h4>
                     <button class="form__button-1" onclick="toggleTextAndImage()">Нажми чтоб оплатить</button>
                     <div id="contentContainer"></div>
-
 <script>
     let isVisible = false;
 
