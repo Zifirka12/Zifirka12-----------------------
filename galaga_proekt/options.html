@@ -93,9 +93,9 @@
                                 <button data-path="three" class="btn btn-secondary dropdown-toggle form__button">
                                     Music
                                 </button>
-                                <ul data-target="three" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item form__button" href="#">3</a></li>
-                                    <li><a class="dropdown-item form__button" href="#">3</a></li>
+                                <ul data-target="three" class="dropdown-menu" class="button-container" aria-labelledby="dropdownMenuButton">
+                                    <button onclick="playMusic()" class="dropdown-item form__button">Play Music</button>
+                                    <button onclick="pauseMusic()" class="dropdown-item form__button">Pause Music</button>
                                     <li><a class="dropdown-item form__button" href="#">3</a></li>
                                 </ul>
                             </div>
@@ -184,16 +184,6 @@
 
     </div>
 
-        <!-- Audio element
-        <div class="audio-controls">
-            <audio id="backgroundMusic" loop>
-                <source src="1b13f630f40cb25.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-            <button onclick="playMusic()">Play Music</button>
-            <button onclick="pauseMusic()">Pause Music</button>
-        </div> -->
-    
         <script src="music.js"></script>
 
     <script src="index.js"></script>
