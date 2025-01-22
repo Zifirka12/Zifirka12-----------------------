@@ -386,6 +386,14 @@ ul {
   align-items: flex-end;
 }
 
+.footer_a {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
 .footer_shop {
   padding-top: 46px;
   display: flex;
@@ -477,4 +485,22 @@ ul {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: flex-end;
+}
+
+.form__button_a {
+  background: rgba(222, 215, 215, 0.41);
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 16px;
+  width: 300px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  color: #000000;
+}
+
+.form__button_a:hover {
+  background: #000;
+  color: #FFF;
 }
