@@ -1,47 +1,56 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galaga</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        #contentContainer {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-            z-index: 9999;
-        }
-    </style>
-</head><body class="top_galaga center">
-    <header class="header">
-        <h1 class="ArcadeBlast">ArcadeBlast</h1>
-        <nav class="menu">
-            <div>
-                <button class="form__button-2">Вход</button>
-            </div>
-            <div>
-                <button class="form__button-2">Регистрация</button>
-            </div>
-        </nav>
-        
-    </header>
+    <html lang="en">
 
-    <div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Galaga</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            #contentContainer {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+                z-index: 9999;
+            }
+        </style>
+    </head>
+    <body class="top_galaga_grey center">
+        <header class="header">
+            <h1 class="ArcadeBlast">ArcadeBlast</h1>
+            <nav class="menu">
+                <div>
+                    <button onclick="toggleLoginBlock()" class="form__button-2">Вход</button>
+                    <div id="loginBlock" style="display: none; position: fixed; top: 43%; left: 42%;width: 200px;height: 160px;background: rgba(222, 215, 215, 1); box-shadow: 3px 3px 0 rgba(235, 238, 234, 0.8);border-radius: 16px;"></div>
 
-        <div class="menu-flex">
-            <h1 class="title center">Galaga</h1>
+                </div>
+                <div>
+                    <button onclick="toggleRegisterBlock()" class="form__button-2">Регистрация</button>
+                    <div id="registerBlock" style="display: none; position: fixed; top: 43%; left: 42%;width: 200px;height: 200px;background: rgba(222, 215, 215, 1); box-shadow: 3px 3px 0 rgba(235, 238, 234, 0.8);border-radius: 16px;"></div>                </div>
+
+                
+                
+            </nav>
+
+            
+        </header>
+    
+        <div>
+    
+            <div class="menu-flex">
+                <h1 class="title center">Galaga</h1>
+            </div>
         </div>
-    </div>
 
 <script>
 var KEY = { D: 68, W: 87, A: 65, S:83, RIGHT:39, UP:38, LEFT:37, DOWN:40, SPACE:32, N:78 };
@@ -136,7 +145,7 @@ this.runGame = function() {
 this.prepareAttack();
 }
 this.startAttack = function() {
-    var iCount = Math.floor(Math.random()*3.5)+1; //Количество атакующих
+    var iCount = Math.floor(Math.random()*3.5)+3; //Количество атакующих
     var iStart = Math.floor(Math.random()*oAliens.length-iCount);
     var oElement = oAliens.getIt(iStart);
     if (!oElement) return false;
@@ -433,10 +442,10 @@ for (var i in this.aHigh) oneDigit(8*i + this.x + 111, this.y-1, this.aHigh[i]);
  this.add = function(type, attacking) { //Правила начисления очков
 var iPoints = 0;
 switch(type) {
-case 1: iPoints = 30; break;
-case 2: iPoints = 40; break;
-case 3: iPoints = 50; break;
-case 4: iPoints = 60; break;
+case 1: iPoints = 70; break;
+case 2: iPoints = 80; break;
+case 3: iPoints = 90; break;
+case 4: iPoints = 100; break;
 }
     if (attacking) iPoints *= 2;
     if (iPoints == 120) iPoints = 300;
@@ -516,7 +525,7 @@ this.next = function() {
 if (this.iLevel<10) this.iLevel++;
 else {
 this.winner = true;
-document.getElementById('messageBox');
+document.getElementById('messageBox').innerHTML ='Вы победили!';
 }
 if (this.iLives<0) this.iLives = 0;
 drawInfo();
@@ -943,7 +952,7 @@ oElement = oElement.next;
 }
 }
 var ctx = document.getElementById('canvas').getContext('2d');
-ctx.fillStyle = 'black';
+ctx.fillStyle = 'gray';
 ctx.fillRect(0,0,canvasSize.x,canvasSize.y);
 var oElement = oStars.first;
 while (oElement != null) {
@@ -971,14 +980,14 @@ bullet = bullet.next;
 if (input.newgame && oLives.killed()) {
 input.newgame = false;
 logic.reset();
-document.getElementById('messageBox').innerHTML = '';
+document.getElementById('messageBox');
 }
 flag = false;
 }
 
 function drawInfo() {
 var ctx = document.getElementById('canvasInfo').getContext('2d');
-ctx.fillStyle = 'black';
+ctx.fillStyle = 'gray';
 ctx.fillRect(0,0,canvasInfoSize.x,canvasInfoSize.y);
 oPoints.draw();
 oLives.draw();
@@ -991,7 +1000,7 @@ function start() {
         startFlag = true;
         logic.runGame();
         drawInfo();
-        document.getElementById('messageBox').innerHTML = '';
+        document.getElementById('messageBox');
         }
         else {
             document.getElementById('messageBox');
@@ -1069,6 +1078,7 @@ window.addEventListener ('keypress', function (e) {
     </div>
 
 </footer>
+<script src="index.js"></script>
 
-
-</body></html>
+</body>
+</html>

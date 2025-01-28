@@ -21,6 +21,20 @@
             z-index: 1000;
         }
     </style>
+        <style>
+            #contentContainer {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+                z-index: 9999;
+            }
+        </style>
 </head>
 
 <body>
@@ -29,12 +43,18 @@
             <h1 class="ArcadeBlast">ArcadeBlast</h1>
             <nav class="menu">
                 <div>
-                    <button class="form__button-2">Вход</button>
+                    <button onclick="toggleLoginBlock()" class="form__button-2">Вход</button>
+                    <div id="loginBlock" style="display: none; position: fixed; top: 43%; left: 42%;width: 200px;height: 160px;background: rgba(222, 215, 215, 1); box-shadow: 3px 3px 0 rgba(235, 238, 234, 0.8);border-radius: 16px;"></div>
+
                 </div>
                 <div>
-                    <button class="form__button-2">Регистрация</button>
-                </div>
+                    <button onclick="toggleRegisterBlock()" class="form__button-2">Регистрация</button>
+                    <div id="registerBlock" style="display: none; position: fixed; top: 43%; left: 42%;width: 200px;height: 200px;background: rgba(222, 215, 215, 1); box-shadow: 3px 3px 0 rgba(235, 238, 234, 0.8);border-radius: 16px;"></div>                </div>
+
+                
+                
             </nav>
+
             
         </header>
 
@@ -48,14 +68,22 @@
                 <button class="form__button" type="submit">Achievements</button>
                 <div class="levels-loko">
                     <div class="levels-3">
-                        <button class="form__button" type="submit">Achievements 1</button>
-                        <button class="form__button" type="submit">Achievements 2</button>
-                        <button class="form__button" type="submit">Achievements 3</button>
+                        <button class="form__button_a" type="submit">* Barishnik: Buy a paid ship.</button>
+                        <button class="form__button_a" type="submit">* God of War: Complete hard level up to difficulty 12.</button>
+                        <button class="form__button_a" type="submit">* Absolute Destruction: Destroy all enemies in a level.</button>
+                        <button class="form__button_a" type="submit">* Legend in action: Complete 5 levels without losing lives.</button>  
                     </div>
                     <div class="levels-3">
-                        <button class="form__button" type="submit">Achievements 4</button>
-                        <button class="form__button" type="submit">Achievements 5</button>
-                        <button class="form__button" type="submit">Achievements 6</button>
+                        <button class="form__button_a" type="submit">* Near Life: Complete a level with your last life.</button>
+                        <button class="form__button_a" type="submit">* Dodge Master: Complete a level without getting hit.</button>
+                        <button class="form__button_a" type="submit">* Infinity is not the limit: Beat the creator's record</button>
+                        <button class="form__button_a"type="submit">* Cadet: Start the first level.</button> 
+                    </div>
+                    <div class="levels-3">
+                        <button class="form__button_a" type="submit">* Sergeant: Start the easy level.</button>
+                        <button class="form__button_a" type="submit">* Lieutenant: Start normal level.</button>
+                        <button class="form__button_a" type="submit">* Captain: Start a difficult level.</button>
+                        <button class="form__button_a" type="submit">* Admiral: Get all skins for ships.</button> 
                     </div>
                 </div>
                 
@@ -64,14 +92,13 @@
         </div>
 
 
-        <footer class="center footer">
+        <footer class="center footer_a">
             <p class="ArcadeBlast">ArcadeBlast</p>
             <div class="footer-info">
                 <div class="footer-item">
                     <h4 class="title-4 ArcadeBlast1">Поддержать разработчика</h4>
                     <button class="form__button-1" onclick="toggleTextAndImage()">Нажми чтоб оплатить</button>
                     <div id="contentContainer"></div>
-
 <script>
     let isVisible = false;
 

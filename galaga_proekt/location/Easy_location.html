@@ -31,12 +31,18 @@
             <h1 class="ArcadeBlast">ArcadeBlast</h1>
             <nav class="menu">
                 <div>
-                    <button class="form__button-2">Вход</button>
+                    <button onclick="toggleLoginBlock()" class="form__button-2">Вход</button>
+                    <div id="loginBlock" style="display: none; position: fixed; top: 43%; left: 42%;width: 200px;height: 160px;background: rgba(222, 215, 215, 1); box-shadow: 3px 3px 0 rgba(235, 238, 234, 0.8);border-radius: 16px;"></div>
+
                 </div>
                 <div>
-                    <button class="form__button-2">Регистрация</button>
-                </div>
+                    <button onclick="toggleRegisterBlock()" class="form__button-2">Регистрация</button>
+                    <div id="registerBlock" style="display: none; position: fixed; top: 43%; left: 42%;width: 200px;height: 200px;background: rgba(222, 215, 215, 1); box-shadow: 3px 3px 0 rgba(235, 238, 234, 0.8);border-radius: 16px;"></div>                </div>
+
+                
+                
             </nav>
+
             
         </header>
 
@@ -50,9 +56,9 @@
                 <button class="form__button" type="submit">Location</button>
                 <div class="levels-loko">
                     <div class="levels-3">
-                        <button class="form__button" onclick="location.href='galaga_hormal.html'">Space</button>
-                        <button class="form__button" onclick="location.href='galaga_hormal_blue.html'">Blue Space</button>
-                        <button class="form__button" onclick="location.href='galaga_hormal_gray.html'">Gray Space</button>
+                        <button class="form__button" onclick="location.href='galaga.html'">Space</button>
+                        <button class="form__button" onclick="location.href='galaga_blue.html'">Blue Space</button>
+                        <button class="form__button" onclick="location.href='galaga_gray.html'">Gray Space</button>
                     </div>
                 </div>
                 <button class="form__button" onclick="location.href='levels.html'">Exit</button>
@@ -100,6 +106,8 @@
         </footer>
 
     </div>
+    <script src="index.js"></script>
+
 
 
 </body>

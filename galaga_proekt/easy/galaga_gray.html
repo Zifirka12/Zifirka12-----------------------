@@ -25,26 +25,32 @@
             }
         </style>
     </head>
-    <body class="top_galaga center">
-        <header class="header">
-            <h1 class="ArcadeBlast">ArcadeBlast</h1>
-            <nav class="menu">
-                <div>
-                    <button class="form__button-2">Вход</button>
-                </div>
-                <div>
-                    <button class="form__button-2">Регистрация</button>
-                </div>
-            </nav>
-            
-        </header>
-    
-        <div>
-    
-            <div class="menu-flex">
-                <h1 class="title center">Galaga</h1>
+<body class="top_galaga_grey center">
+    <header class="header">
+        <h1 class="ArcadeBlast">ArcadeBlast</h1>
+        <nav class="menu">
+            <div>
+                <button onclick="toggleLoginBlock()" class="form__button-2">Вход</button>
+                <div id="loginBlock" style="display: none; position: fixed; top: 43%; left: 42%;width: 200px;height: 160px;background: rgba(222, 215, 215, 1); box-shadow: 3px 3px 0 rgba(235, 238, 234, 0.8);border-radius: 16px;"></div>
+
             </div>
+            <div>
+                <button onclick="toggleRegisterBlock()" class="form__button-2">Регистрация</button>
+                <div id="registerBlock" style="display: none; position: fixed; top: 43%; left: 42%;width: 200px;height: 200px;background: rgba(222, 215, 215, 1); box-shadow: 3px 3px 0 rgba(235, 238, 234, 0.8);border-radius: 16px;"></div>                </div>
+
+            
+            
+        </nav>
+
+        
+    </header>
+
+    <div>
+
+        <div class="menu-flex">
+            <h1 class="title center">Galaga</h1>
         </div>
+    </div>
 
 <script>
 var KEY = { D: 68, W: 87, A: 65, S:83, RIGHT:39, UP:38, LEFT:37, DOWN:40, SPACE:32, N:78 };
@@ -139,7 +145,7 @@ this.runGame = function() {
 this.prepareAttack();
 }
 this.startAttack = function() {
-    var iCount = Math.floor(Math.random()*3.5)+2; //Количество атакующих
+    var iCount = Math.floor(Math.random()*3.5)+1; //Количество атакующих
     var iStart = Math.floor(Math.random()*oAliens.length-iCount);
     var oElement = oAliens.getIt(iStart);
     if (!oElement) return false;
@@ -436,10 +442,10 @@ for (var i in this.aHigh) oneDigit(8*i + this.x + 111, this.y-1, this.aHigh[i]);
  this.add = function(type, attacking) { //Правила начисления очков
 var iPoints = 0;
 switch(type) {
-case 1: iPoints = 60; break;
-case 2: iPoints = 70; break;
-case 3: iPoints = 80; break;
-case 4: iPoints = 90; break;
+case 1: iPoints = 30; break;
+case 2: iPoints = 40; break;
+case 3: iPoints = 50; break;
+case 4: iPoints = 60; break;
 }
     if (attacking) iPoints *= 2;
     if (iPoints == 120) iPoints = 300;
@@ -519,7 +525,7 @@ this.next = function() {
 if (this.iLevel<10) this.iLevel++;
 else {
 this.winner = true;
-document.getElementById('messageBox');
+document.getElementById('messageBox').innerHTML ='Вы победили!';
 }
 if (this.iLives<0) this.iLives = 0;
 drawInfo();
@@ -663,36 +669,39 @@ if (aFlags.bBullet == false)
 var bulletObj = new bullet({x: this.x + aParams.width/2, y: this.y - aParamsBullet.height, direction: -1});
 }
 this.draw = function() {
-if (oLives.killed() || this.recovering) return false;
-var ctx = document.getElementById('canvas').getContext('2d');
-if (!aFlags.bBullet) {
-ctx.fillStyle = 'rgb(191,191,0)';
-ctx.fillRect(this.x+7,this.y-4,1,4);
-}
-ctx.fillStyle = 'rgb(204,0,0)';
-ctx.fillRect(this.x+6,this.y,3,1);
-ctx.fillRect(this.x+5,this.y+1,5,7);
-ctx.fillRect(this.x+4,this.y+2,1,1);
-ctx.fillRect(this.x+10,this.y+2,1,1);
-ctx.fillRect(this.x+3,this.y+3,2,2);
-ctx.fillRect(this.x+10,this.y+3,2,2);
-ctx.fillRect(this.x+3,this.y+5,1,1);
-ctx.fillRect(this.x+11,this.y+5,1,1);
-ctx.fillRect(this.x+1,this.y+7,1,1);
-ctx.fillRect(this.x+13,this.y+7,1,1);
-ctx.fillStyle = 'rgb(191,191,191)';
-ctx.fillRect(this.x+1,this.y+8,1,1);
-ctx.fillRect(this.x+13,this.y+8,1,1);
-ctx.fillRect(this.x,this.y+9,3,5);
-ctx.fillRect(this.x+12,this.y+9,3,5);
-ctx.fillRect(this.x+5,this.y+8,2,7);
-ctx.fillRect(this.x+8,this.y+8,2,7);
-ctx.fillRect(this.x+1,this.y+14,1,2);
-ctx.fillRect(this.x+13,this.y+14,1,2);
-ctx.fillRect(this.x+3,this.y+10,1,2);
-ctx.fillRect(this.x+4,this.y+9,1,2);
-ctx.fillRect(this.x+10,this.y+9,1,2);
-ctx.fillRect(this.x+11,this.y+10,1,2);
+    if (oLives.killed() || this.recovering) return false;
+    var ctx = document.getElementById('canvas').getContext('2d');
+    
+    if (!aFlags.bBullet) {
+        ctx.fillStyle = 'rgb(0, 128, 255)'; // Светло-синий
+        ctx.fillRect(this.x+7,this.y-4,1,4);
+    }
+    
+    ctx.fillStyle = 'rgb(0, 0, 255)'; // Синий
+    ctx.fillRect(this.x+6,this.y,3,1);
+    ctx.fillRect(this.x+5,this.y+1,5,7);
+    ctx.fillRect(this.x+4,this.y+2,1,1);
+    ctx.fillRect(this.x+10,this.y+2,1,1);
+    ctx.fillRect(this.x+3,this.y+3,2,2);
+    ctx.fillRect(this.x+10,this.y+3,2,2);
+    ctx.fillRect(this.x+3,this.y+5,1,1);
+    ctx.fillRect(this.x+11,this.y+5,1,1);
+    ctx.fillRect(this.x+1,this.y+7,1,1);
+    ctx.fillRect(this.x+13,this.y+7,1,1);
+    
+    ctx.fillStyle = 'rgb(135, 206, 250)'; // Голубой
+    ctx.fillRect(this.x+1,this.y+8,1,1);
+    ctx.fillRect(this.x+13,this.y+8,1,1);
+    ctx.fillRect(this.x,this.y+9,3,5);
+    ctx.fillRect(this.x+12,this.y+9,3,5);
+    ctx.fillRect(this.x+5,this.y+8,2,7);
+    ctx.fillRect(this.x+8,this.y+8,2,7);
+    ctx.fillRect(this.x+1,this.y+14,1,2);
+    ctx.fillRect(this.x+13,this.y+14,1,2);
+    ctx.fillRect(this.x+3,this.y+10,1,2);
+    ctx.fillRect(this.x+4,this.y+9,1,2);
+    ctx.fillRect(this.x+10,this.y+9,1,2);
+    ctx.fillRect(this.x+11,this.y+10,1,2);
 }
 this.hit = function() {
 oLives.hit();
@@ -702,7 +711,7 @@ else this._recovering();
 this._gameover = function() {
 this.x = -1000;
 this.y = -1000;
-document.getElementById('messageBox');
+document.getElementById('messageBox').innerHTML;
 this.gameOver = true;
 }
 this._recovering = function() {
@@ -946,7 +955,7 @@ oElement = oElement.next;
 }
 }
 var ctx = document.getElementById('canvas').getContext('2d');
-ctx.fillStyle = 'black';
+ctx.fillStyle = 'gray';
 ctx.fillRect(0,0,canvasSize.x,canvasSize.y);
 var oElement = oStars.first;
 while (oElement != null) {
@@ -981,7 +990,7 @@ flag = false;
 
 function drawInfo() {
 var ctx = document.getElementById('canvasInfo').getContext('2d');
-ctx.fillStyle = 'black';
+ctx.fillStyle = 'gray';
 ctx.fillRect(0,0,canvasInfoSize.x,canvasInfoSize.y);
 oPoints.draw();
 oLives.draw();
@@ -994,7 +1003,7 @@ function start() {
         startFlag = true;
         logic.runGame();
         drawInfo();
-        document.getElementById('messageBox');
+        document.getElementById('messageBox').innerHTML = '';
         }
         else {
             document.getElementById('messageBox');
@@ -1072,6 +1081,7 @@ window.addEventListener ('keypress', function (e) {
     </div>
 
 </footer>
+<script src="index.js"></script>
 
 </body>
 </html>
